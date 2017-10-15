@@ -1,16 +1,17 @@
 apply plugin: 'com.android.application'
-def releaseTime() {
+
+static def releaseTime() {
     return new Date().format("yyyyMMdd", TimeZone.getTimeZone("UTC"))
 }
 
 android {
-    compileSdkVersion 24
-    buildToolsVersion "24"
+    compileSdkVersion 26
+    buildToolsVersion "26.0.2"
 
     defaultConfig {
         applicationId "jaydenxiao.com.androidfire"
         minSdkVersion 15
-        targetSdkVersion 24
+        targetSdkVersion 26
         versionCode 4
         versionName "1.0.3"
     }
@@ -45,7 +46,7 @@ android {
     }
     //设置虚拟机堆内存空间大小，避免在编译期间OOM
     dexOptions {
-        incremental true
+//        incremental true /*过期了*/
         javaMaxHeapSize "4g"
     }
     //打包不检查
